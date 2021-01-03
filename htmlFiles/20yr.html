@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_01cfcf62eb1b435186c75e24798061b3 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+    <script src="https://rawcdn.githack.com/nezasa/iso8601-js-period/master/iso8601.min.js"></script>
+    <script src="https://rawcdn.githack.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_01cfcf62eb1b435186c75e24798061b3" ></div>
+        
+</body>
+<script>    
+    
+            var map_01cfcf62eb1b435186c75e24798061b3 = L.map(
+                "map_01cfcf62eb1b435186c75e24798061b3",
+                {
+                    center: [38.051004, -78.50525],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_01cfcf62eb1b435186c75e24798061b3);
+
+            
+
+        
+    
+            var tile_layer_2a49db984f4d44f9adad4bfa2e27fb37 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_01cfcf62eb1b435186c75e24798061b3);
+        
+    
+            L.Control.TimeDimensionCustom = L.Control.TimeDimension.extend({
+                _getDisplayDateFormat: function(date){
+                    var newdate = new moment(date);
+                    console.log(newdate)
+                    return newdate.format("YYYY-MM-DD");
+                }
+            });
+            map_01cfcf62eb1b435186c75e24798061b3.timeDimension = L.timeDimension(
+                {
+                    period: "P1D",
+                }
+            );
+            var timeDimensionControl = new L.Control.TimeDimensionCustom(
+                {"autoPlay": false, "loopButton": true, "maxSpeed": 100, "minSpeed": 0.1, "playerOptions": {"loop": false, "startOver": true, "transitionTime": 200}, "position": "bottomleft", "timeSliderDragUpdate": true}
+            );
+            map_01cfcf62eb1b435186c75e24798061b3.addControl(this.timeDimensionControl);
+
+            var geoJsonLayer = L.geoJson({"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "MultiPoint", "coordinates": [[-78.4980801, 38.050086], [-78.4980801, 38.04962800000001], [-78.4980801, 38.04962800000001], [-78.4980801, 38.0491458], [-78.4980801, 38.0489287], [-78.4980801, 38.0487072], [-78.4980801, 38.04849], [-78.4980801, 38.04849], [-78.4980801, 38.04849], [-78.4980801, 38.048265], [-78.4980801, 38.048265], [-78.4980801, 38.0480588], [-78.4980801, 38.0480588], [-78.4980801, 38.0480588], [-78.4980801, 38.0482395], [-78.4980801, 38.0487321], [-78.4980801, 38.0489128], [-78.4980801, 38.04914309999999], [-78.4980801, 38.04914309999999], [-78.4980801, 38.0490777], [-78.4980801, 38.0490777], [-78.4980801, 38.0486347], [-78.4980801, 38.0486347], [-78.4980801, 38.0483724], [-78.4980801, 38.0483724], [-78.4980801, 38.0481509], [-78.4980801, 38.0481509], [-78.4980801, 38.0479206], [-78.4980801, 38.0479206], [-78.4980801, 38.0476991], [-78.4980801, 38.04779990000001], [-78.4980801, 38.04779990000001], [-78.4980801, 38.047481], [-78.4980801, 38.047481], [-78.4980801, 38.047481], [-78.4980801, 38.047481], [-78.4980801, 38.04736870000001], [-78.4980801, 38.0475174], [-78.4980801, 38.0475174], [-78.4980801, 38.0477739], [-78.4980801, 38.0481644], [-78.4980801, 38.0489946], [-78.4980801, 38.0489946], [-78.4980801, 38.0489946], [-78.4980801, 38.0489946], [-78.4980801, 38.0487374], [-78.4980801, 38.0487374], [-78.4980801, 38.0479242], [-78.4980801, 38.0479242], [-78.4980801, 38.0479818], [-78.4980801, 38.0479818], [-78.4980801, 38.0479818], [-78.4980801, 38.0480941], [-78.4980801, 38.048374], [-78.4980801, 38.048374], [-78.4980801, 38.0481358], [-78.4980801, 38.0473721], [-78.4980801, 38.0473721], [-78.4980801, 38.0475471], [-78.4980801, 38.0475471], [-78.4980801, 38.04714050000001], [-78.4980801, 38.0468047], [-78.4980801, 38.0468047], [-78.4980801, 38.0473682], [-78.4980801, 38.0473682], [-78.4980801, 38.04713220000001], [-78.4980801, 38.0465257], [-78.4980801, 38.0466599], [-78.4980801, 38.0463092], [-78.4980801, 38.0463092], [-78.4980801, 38.0463092], [-78.4980801, 38.0463092], [-78.4980801, 38.0476626], [-78.4980801, 38.0476626], [-78.4980801, 38.0480679], [-78.4980801, 38.047695], [-78.4980801, 38.047695], [-78.4980801, 38.0473693], [-78.4980801, 38.0473693], [-78.4980801, 38.0473693], [-78.4980801, 38.0474395], [-78.4980801, 38.0470258], [-78.4980801, 38.0465261], [-78.4980801, 38.04637750000001], [-78.4980801, 38.0469091], [-78.4980801, 38.0469091], [-78.4980801, 38.0469091], [-78.4980801, 38.0468667], [-78.4980801, 38.0468667], [-78.4980801, 38.04649819999999]]}, "properties": {"popup": ["1890 WESTVIEW RD\nSaleAmount: $549,000.00", "1888 WESTVIEW RD\nSaleAmount: $962,500.00", "1888 WESTVIEW RD\nSaleAmount: $275,000.00", "1882 WESTVIEW RD\nSaleAmount: $1,300,000.00", "1880 WESTVIEW RD\nSaleAmount: $525,000.00", "1878 WESTVIEW RD\nSaleAmount: $580,000.00", "1876 WESTVIEW RD\nSaleAmount: $125,000.00", "1876 WESTVIEW RD\nSaleAmount: $940,000.00", "1876 WESTVIEW RD\nSaleAmount: $895,000.00", "1852 WESTVIEW RD\nSaleAmount: $889,000.00", "1852 WESTVIEW RD\nSaleAmount: $889,000.00", "1863 FIELD RD\nSaleAmount: $483,000.00", "1863 FIELD RD\nSaleAmount: $695,000.00", "1863 FIELD RD\nSaleAmount: $695,000.00", "1865 FIELD RD\nSaleAmount: $469,000.00", "1869 FIELD RD\nSaleAmount: $275,000.00", "1871 FIELD RD\nSaleAmount: $473,000.00", "1873 FIELD RD\nSaleAmount: $425,000.00", "1873 FIELD RD\nSaleAmount: $545,000.00", "1882 FIELD RD\nSaleAmount: $470,000.00", "1882 FIELD RD\nSaleAmount: $430,000.00", "1872 FIELD RD\nSaleAmount: $389,000.00", "1872 FIELD RD\nSaleAmount: $695,940.00", "1870 FIELD RD\nSaleAmount: $345,000.00", "1870 FIELD RD\nSaleAmount: $740,000.00", "1868 FIELD RD\nSaleAmount: $685,000.00", "1868 FIELD RD\nSaleAmount: $1,375,000.00", "1866 FIELD RD\nSaleAmount: $520,000.00", "1866 FIELD RD\nSaleAmount: $520,000.00", "1864 FIELD RD\nSaleAmount: $420,000.00", "906 FENDALL TER\nSaleAmount: $530,000.00", "906 FENDALL TER\nSaleAmount: $1,350,000.00", "1861 WINSTON RD\nSaleAmount: $660,000.00", "1861 WINSTON RD\nSaleAmount: $590,000.00", "1861 WINSTON RD\nSaleAmount: $315,000.00", "1861 WINSTON RD\nSaleAmount: $680,000.00", "1863 WINSTON RD\nSaleAmount: $575,000.00", "1867 WINSTON RD\nSaleAmount: $745,000.00", "1867 WINSTON RD\nSaleAmount: $725,000.00", "901 FENDALL TER\nSaleAmount: $699,000.00", "905 FENDALL TER\nSaleAmount: $579,000.00", "1910 BARRACKS RD\nSaleAmount: $948,000.00", "1910 BARRACKS RD\nSaleAmount: $948,000.00", "1910 BARRACKS RD\nSaleAmount: $500,000.00", "1910 BARRACKS RD\nSaleAmount: $500,000.00", "120 BUCKINGHAM RD\nSaleAmount: $377,500.00", "120 BUCKINGHAM RD\nSaleAmount: $275,000.00", "108 BUCKINGHAM RD\nSaleAmount: $600,000.00", "108 BUCKINGHAM RD\nSaleAmount: $310,000.00", "110 BUCKINGHAM RD\nSaleAmount: $355,000.00", "110 BUCKINGHAM RD\nSaleAmount: $362,500.00", "110 BUCKINGHAM RD\nSaleAmount: $300,000.00", "114 BUCKINGHAM RD\nSaleAmount: $391,000.00", "118 BUCKINGHAM RD\nSaleAmount: $386,375.00", "118 BUCKINGHAM RD\nSaleAmount: $412,500.00", "1812 BARRACKS RD\nSaleAmount: $236,000.00", "1107 RUGBY RD\nSaleAmount: $350,000.00", "1107 RUGBY RD\nSaleAmount: $478,000.00", "1109 RUGBY RD\nSaleAmount: $415,000.00", "1109 RUGBY RD\nSaleAmount: $83,000.00", "1105 RUGBY RD\nSaleAmount: $339,000.00", "1101 RUGBY RD\nSaleAmount: $1,975,000.00", "1101 RUGBY RD\nSaleAmount: $810,000.00", "947 ROSSER LN\nSaleAmount: $767,500.00", "947 ROSSER LN\nSaleAmount: $640,000.00", "945 ROSSER LN\nSaleAmount: $377,000.00", "1801 WESTVIEW RD\nSaleAmount: $768,000.00", "1829 WESTVIEW RD\nSaleAmount: $740,000.00", "921 ROSSER LN\nSaleAmount: $2,967.00", "921 ROSSER LN\nSaleAmount: $650,000.00", "921 ROSSER LN\nSaleAmount: $851,000.00", "921 ROSSER LN\nSaleAmount: $848,000.00", "1839 WESTVIEW RD\nSaleAmount: $1,100,000.00", "1839 WESTVIEW RD\nSaleAmount: $735,000.00", "1861 WESTVIEW RD\nSaleAmount: $1,000,000.00", "1844 WESTVIEW RD\nSaleAmount: $385,000.00", "1844 WESTVIEW RD\nSaleAmount: $675,000.00", "1834 WESTVIEW RD\nSaleAmount: $425,000.00", "1834 WESTVIEW RD\nSaleAmount: $776,795.00", "1834 WESTVIEW RD\nSaleAmount: $456,000.00", "1859 FIELD RD\nSaleAmount: $155,000.00", "1858 FIELD RD\nSaleAmount: $635,000.00", "1847 WINSTON RD\nSaleAmount: $308,000.00", "1843 WINSTON RD\nSaleAmount: $650,000.00", "1856 FIELD RD\nSaleAmount: $593,800.00", "1856 FIELD RD\nSaleAmount: $550,000.00", "1856 FIELD RD\nSaleAmount: $814,000.00", "919 OLD FARM RD\nSaleAmount: $425,000.00", "919 OLD FARM RD\nSaleAmount: $408,400.00", "911 OLD FARM RD\nSaleAmount: $402,000.00"], "times": ["2008-08-07", "2010-08-04", "2001-01-24", "2019-09-04", "2004-03-29", "2005-10-08", "2002-06-12", "2014-06-30", "2007-08-29", "2007-06-19", "2007-06-19", "2008-08-04", "2017-12-08", "2017-12-08", "2012-10-10", "2002-03-01", "2013-06-07", "2003-06-06", "2008-12-15", "2019-02-15", "2018-11-15", "2010-11-01", "2014-03-21", "2001-07-02", "2016-05-05", "2018-04-09", "2019-03-29", "2007-07-13", "2007-05-25", "2004-07-28", "2004-03-03", "2019-06-06", "2018-07-17", "2015-05-06", "2011-05-25", "2020-01-07", "2003-11-18", "2008-07-30", "2006-11-29", "2014-02-07", "2016-08-25", "2007-08-10", "2007-08-10", "2003-06-03", "2003-06-03", "2005-05-06", "2004-02-11", "2009-04-23", "2003-11-18", "2016-10-05", "2007-04-17", "2004-05-03", "2016-12-05", "2012-11-29", "2015-06-30", "2004-08-11", "2010-06-03", "2016-06-30", "2015-01-28", "2013-10-16", "2001-08-31", "2020-05-13", "2003-06-13", "2018-08-10", "2011-12-01", "2003-07-16", "2001-03-06", "2002-03-01", "2002-06-10", "2013-02-12", "2016-10-07", "2017-02-23", "2010-09-02", "2015-07-27", "2008-05-27", "2002-07-23", "2010-12-29", "2002-03-04", "2015-06-12", "2002-05-28", "2015-06-12", "2010-08-18", "2019-12-18", "2016-05-31", "2018-04-02", "2010-07-09", "2020-04-24", "2008-06-16", "2006-05-01", "2002-08-09"], "icon": "circle", "iconstyle": {"fillColor": ["#8B0000", "#8B0000", "#FF0000", "#8B0000", "#8B0000", "#8B0000", "#FF8000", "#8B0000", "#8B0000", "#8B0000", "#8B0000", "#FF0000", "#8B0000", "#8B0000", "#FF0000", "#FF0000", "#FF0000", "#FF0000", "#8B0000", "#FF0000", "#FF0000", "#FF0000", "#8B0000", "#FF0000", "#8B0000", "#8B0000", "#8B0000", "#8B0000", "#8B0000", "#FF0000", "#8B0000", "#8B0000", "#8B0000", "#8B0000", "#FF0000", "#8B0000", "#8B0000", "#8B0000", "#8B0000", "#8B0000", "#8B0000", "#8B0000", "#8B0000", "#8B0000", "#8B0000", "#FF0000", "#FF0000", "#8B0000", "#FF0000", "#FF0000", "#FF0000", "#FF0000", "#FF0000", "#FF0000", "#FF0000", "#FF0000", "#FF0000", "#FF0000", "#FF0000", "#FFFF00", "#FF0000", "#8B0000", "#8B0000", "#8B0000", "#8B0000", "#FF0000", "#8B0000", "#8B0000", "#FFFF00", "#8B0000", "#8B0000", "#8B0000", "#8B0000", "#8B0000", "#8B0000", "#FF0000", "#8B0000", "#FF0000", "#8B0000", "#FF0000", "#FF8000", "#8B0000", "#FF0000", "#8B0000", "#8B0000", "#8B0000", "#8B0000", "#FF0000", "#FF0000", "#FF0000"], "stroke": "false", "radius": 2}}}]}, {
+                    pointToLayer: function (feature, latLng) {
+                        if (feature.properties.icon == 'marker') {
+                            if(feature.properties.iconstyle){
+                                return new L.Marker(latLng, {
+                                    icon: L.icon(feature.properties.iconstyle)});
+                            }
+                            //else
+                            return new L.Marker(latLng);
+                        }
+                        if (feature.properties.icon == 'circle') {
+                            if (feature.properties.iconstyle) {
+                                return new L.circleMarker(latLng, feature.properties.iconstyle)
+                                };
+                            //else
+                            return new L.circleMarker(latLng);
+                        }
+                        //else
+
+                        return new L.Marker(latLng);
+                    },
+                    style: function (feature) {
+                        return feature.properties.style;
+                    },
+                    onEachFeature: function(feature, layer) {
+                        if (feature.properties.popup) {
+                        layer.bindPopup(feature.properties.popup);
+                        }
+                    }
+                })
+
+            var timestamped_geo_json_d642489a562b4eceafeb35986b9f70f2 = L.timeDimension.layer.geoJson(
+                geoJsonLayer,
+                {
+                    updateTimeDimension: true,
+                    addlastPoint: true,
+                    duration: undefined,
+                }
+            ).addTo(map_01cfcf62eb1b435186c75e24798061b3);
+        
+</script>
