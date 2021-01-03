@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Smart Cville Housing Data Project</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.7/chartjs-plugin-annotation.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="main.css"> 
+  </head>
+  <body>
+    <h1>Smart Cville Housing Data Project</h1>
+    
+    <!--Navigation Bar Content-->
+    <div class="navbar">
+        <a href="#ProjectHome" onclick="openIt(event,'ProjectHome')" id='defaultOpen' >Project Home</a>
+        <a href="#Overview" onclick="openIt(event,'Overview')" >Charlottesville</a>
+        <div class="dropdown">
+            <button class="dropbtn">Neighborhood 
+            <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+            <a href="#NDowntown" onclick="openIt(event,'NDowntown')">North Downtown</a>
+            <a href="#MJefferson" onclick="openIt(event,'MJefferson')">Martha Jefferson</a>
+            </div>
+        </div> 
+    </div>
+    
+     <!--Charlottesville Overview Content-->         
+    <div id="Overview" class="tabcontent">
+        <h2>Charlottesville</h2>
+        <h3>Overview of Charlottesville Residential Real Estate Trends</h3>
+        <div class="chart-container" style="position: relative; height:80vh; width:80vw">
+            <canvas id='chartChar'></canvas>
+        </div>
+        <ul>
+                <li class="list">Chart shows average percent increase in sale price of residential real estate properties</li>
+                <li class="list">Chart values determined by taking data set of all residential real estate with 2 or more sales 2000-2019, calculating percent change in sales prices for each individual property, and averaging percent changes within each neighborhood <br><br></li>
+        </ul>
+        <div class="chart-container" style="position: relative; height:80vh; width:80vw">
+                <canvas id='perInc'></canvas>
+            </div>
+        <ul>
+            <li class="list">Chart shows percentage of residential real estate properties with two ore more sales between 2000 and 2019 that showed, on average, an increase in sales prices <br><br></li>
+        </ul>
+        <div class="chart-container" style="position: relative; height:80vh; width:80vw">
+            <canvas id='chartAll'></canvas>
+        </div>
+        <ul>
+                <li class="list">Analyzing $/SqFt instead of sale price allows you to compare different types of homes (i.e. you can compare apartments and single-family homes) <br><br></li>
+            <li class="list">North Downtown 2012 value 864.4874530815093% due to not enough data points. Averaged year before and after. <br><br></li>
+        </ul>
+    </div>
+    
+    <!--Project Home Content-->
+    <div id="ProjectHome" class="tabcontent">
+            <h2>Project Home</h3>
+            <p>The SmartCville Housing Data Project aims to analyze how the housing market in Charlottesville has evolved over the past 20 years. In doing so, we hope to understand how real estate values have changed and the potential impact that it has had on the local community. The HUD defines housing affordability as not spending more than 30% of the household’s income on all housing-related expenses . For many families housing is not affordable, a problem that affects not just the lowest income tier, but families on all income levels. Families earning income that is 50% or less of the area median income of $89,600 (in 2018), have a 65-70% chance of paying more than 30% of their income on housing related expenses . The reality is that if you earn below the area median income or are looking to move closer to the city, your chances of finding affordable housing are slim. Housing in the rural areas surrounding Charlottesville are more affordable, but force families to pay much more for transportation and commuting costs, which significantly impacts the overall cost of living. There is an overall extensive mismatch between housing prices and income. Key problems include a shortage of housing options close to jobs in the urban parts of the Charlottesville area, a general lack of affordable housing, and high construction costs. By talking to professionals and other individuals relevant to housing in Charlottesville, and examining the evolution and growth in real estate (e.g.  sale prices over the past 20-30 years), and identifying trends in the data (e.g. the areas in Charlottesville where the problem of affordable housing may be particularly prevalent), our analysis can help policymakers, stakeholders, and the general public better understand the problem and facilitate a conversation on how to engender change.<br><br>
+            </p> 
+            <h3>Single Family Real Estate Sales Charlottesville 2000-2019 by Neighborhood</h2>
+                <p id="date"></p>
+            <iframe src='htmlFiles/markers_neighs.html' width='80%' height='550' title='Folium'></iframe>
+            <ul>
+                <li class="list">Color of markers indicates magnitude of sale amount </li>
+                <li class="list">Toggle off "Show Neighborhoods" in order to click on individual markers to see details of individual home sales</li>
+                <li class="list">Values in parentheses is average sale price for each neighborhood over the past 20 years</li>
+            </ul>
+    </div>
+
+    <!--North Downtown Content-->
+    <div id="NDowntown" class="tabcontent">
+    <h2>North Downtown</h2>
+    <p></p>
+    <div class="chart-container2" style="position: relative; height:80vh; width:80vw">
+            <canvas id='chartND'></canvas>
+    </div>
+    </div>
+    
+    <!--Martha Jefferson Content-->
+    <div id="MJefferson" class="tabcontent">
+    <h2>Martha Jefferson</h3>
+    <p></p>
+    <div class="chart-container2" style="position: relative; height:80vh; width:80vw">
+        <canvas id='chartMJ'></canvas>
+    </div>
+    </div>
+    
+    <script src="app.js"></script>
+  </body>
+</html>
+
